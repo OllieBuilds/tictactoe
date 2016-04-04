@@ -7,6 +7,14 @@
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <div class="nav">
+        <form id="sign-up">
+          <input name="credentials[email]" type="text" value="an@example.email">
+          <input name="credentials[password]" type="password" value="an example password">
+          <input name="credentials[password_confirmation]" type="password" value="an example password">
+          <input type="submit" name="submit" value="Sign up">
+        </form>
+      </div>
       <div class="container">
         <table id="game-board">
           <tr>

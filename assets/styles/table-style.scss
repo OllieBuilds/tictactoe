@@ -1,0 +1,15 @@
+
+
+.container {
+  background-color: $base;
+}
+
+table {
+  background-color: $white;
+
+  td {
+    border: 2px solid $base;
+    height: 50px;
+    width: 50px;
+  }
+}

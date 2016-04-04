@@ -14,16 +14,16 @@ const signUp = (success, failure, data) => {
   .fail(failure);
 };
 
-// const signIn = (success, failure, data) => {
-// // Math.random() tests code
-//   // Math.random() > 0.5 ? success('in signUp') : failure(data);
-//   $.ajax({
-//     method: 'POST',
-//     url: app.api + 'sign-in',
-//     data,
-//   }).done(success)
-//   .fail(failure);
-// };
+const signIn = (success, failure, data) => {
+// Math.random() tests code
+  // Math.random() > 0.5 ? success('in signUp') : failure(data);
+  $.ajax({
+    method: 'POST',
+    url: app.api + 'sign-in',
+    data,
+  }).done(success)
+  .fail(failure);
+};
 //
 // const signOut = (success, failure) => {
 // // if (!app.user) === bad;
@@ -40,6 +40,6 @@ const signUp = (success, failure, data) => {
 
 module.exports = {
   signUp,
-  // signIn,
+  signIn,
   // signOut,
 };

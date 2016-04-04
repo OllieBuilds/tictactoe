@@ -17,7 +17,7 @@ const signInSuccess = (data) => {
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log(app);
+  console.log('You successfully logged out.');
 };
 
 module.exports = {

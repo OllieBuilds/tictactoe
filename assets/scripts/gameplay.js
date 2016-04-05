@@ -1,15 +1,8 @@
 'use strict';
 
 let currentBoard = [
-  $('#square0').text(),
-  $('#square1').text(),
-  $('#square2').text(),
-  $('#square3').text(),
-  $('#square4').text(),
-  $('#square5').text(),
-  $('#square6').text(),
-  $('#square7').text(),
-  $('#square8').text(),
+$('squareone'),
+
 ];
 
 
@@ -34,12 +27,14 @@ let numTurn = 1;
 // };
 
 $('td').click( function(){
-  if (numTurn % 2 === 0) {
+  if (numTurn % 2 === 0 && $(this).text() === '') {
       $(this).removeClass('playertwo').addClass('playerone');
       $(this).text('X');
+      // currentBoard
       numTurn += 1;
       console.log(currentBoard);
-    } else if (numTurn % 2 !== 0){
+      // console.log ($(this).get());
+    } else if (numTurn % 2 !== 0 && $(this).text() === ''){
       $(this).removeClass('playerone').addClass('playertwo');
       $(this).text('O');
       numTurn += 1;

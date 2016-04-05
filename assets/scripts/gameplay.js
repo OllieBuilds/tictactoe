@@ -1,36 +1,20 @@
 'use strict';
 
 let currentBoard = [
+$('squareone').text(),
+$('squareone'),
 $('squareone'),
 
 ];
 
 
-// $('td').click(function() {
-//   $(this).toggleClass("playerone");
-// });
-//The above works, but I want to test with function as ..Class(param)
 let numTurn = 1;
-//
-// const choosePlayer = function (turn) {
-//   if(turn % 2 === 0){
-//     $('td') .click(function(){
-//       $('this').toggleClass(choosePlayer('playerone'));
-//       numTurn += 1;
-//     });
-//   } else if (turn % 2 !== 0){
-//     $('td') .click(function(){
-//       $('this').toggleClass(choosePlayer('playertwo'));
-//       numTurn += 1;
-//     });
-//   }
-// };
+
 
 $('td').click( function(){
   if (numTurn % 2 === 0 && $(this).text() === '') {
       $(this).removeClass('playertwo').addClass('playerone');
       $(this).text('X');
-      // currentBoard
       numTurn += 1;
       console.log(currentBoard);
       // console.log ($(this).get());
@@ -42,11 +26,6 @@ $('td').click( function(){
     }
   });
 
-
-// $('td') .click(function(){
-//   $('this').toggleClass(choosePlayer());
-//   numTurn += 1;
-// });
 
 
 // module.exports = makeMove;

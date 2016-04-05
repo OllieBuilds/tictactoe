@@ -12,19 +12,42 @@ let currentBoard = [
   $('#square8').text(),
 ];
 
-console.log($(''));
 
-$('td').click(function() {
-  $(this).toggleClass("playerone");
-});
+// $('td').click(function() {
+//   $(this).toggleClass("playerone");
+// });
+//The above works, but I want to test with function as ..Class(param)
+let numTurn = 0;
+//
+// const choosePlayer = function (turn) {
+//   if(turn % 2 === 0){
+//     $('td') .click(function(){
+//       $('this').toggleClass(choosePlayer('playerone'));
+//       numTurn += 1;
+//     });
+//   } else if (turn % 2 !== 0){
+//     $('td') .click(function(){
+//       $('this').toggleClass(choosePlayer('playertwo'));
+//       numTurn += 1;
+//     });
+//   }
+// };
+
+$('td').click( function(){
+  if (numTurn % 2 === 0) {
+      $(this).toggleClass('playerone');
+      numTurn += 1;
+    } else if (numTurn % 2 !== 0){
+      $(this).toggleClass('playertwo');
+      numTurn += 1;
+    }
+  });
 
 
-$( "p" ).click(function() {
-  $( this ).toggleClass( "highlight" );
-});
-
-console.log(document.getElementById('square0'));
-console.log(currentBoard);
+// $('td') .click(function(){
+//   $('this').toggleClass(choosePlayer());
+//   numTurn += 1;
+// });
 
 
 // module.exports = makeMove;

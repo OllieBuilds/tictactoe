@@ -1,10 +1,17 @@
 'use strict';
 
-let currentBoard = [
-$('squareone').text(),
-$('squareone'),
-$('squareone'),
+// require('win');
 
+let boardView = [
+  $('#square0'),
+  $('#square1'),
+  $('#square2'),
+  $('#square3'),
+  $('#square4'),
+  $('#square5'),
+  $('#square6'),
+  $('#square7'),
+  $('#square8'),
 ];
 
 
@@ -16,22 +23,14 @@ $('td').click( function(){
       $(this).removeClass('playertwo').addClass('playerone');
       $(this).text('X');
       numTurn += 1;
-      console.log(currentBoard);
       // console.log ($(this).get());
     } else if (numTurn % 2 !== 0 && $(this).text() === ''){
       $(this).removeClass('playerone').addClass('playertwo');
       $(this).text('O');
       numTurn += 1;
-      console.log(currentBoard);
     }
   });
+//
 
 
-
-// module.exports = makeMove;
-
-
-// for (i=0;i<7;i++){
-//     x="txt"+i;
-//     document.getElementById(x).firstChild.nodeValue='&<>'
-// }
+module.exports = true;

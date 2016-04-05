@@ -17,7 +17,7 @@ let currentBoard = [
 //   $(this).toggleClass("playerone");
 // });
 //The above works, but I want to test with function as ..Class(param)
-let numTurn = 0;
+let numTurn = 1;
 //
 // const choosePlayer = function (turn) {
 //   if(turn % 2 === 0){
@@ -35,11 +35,15 @@ let numTurn = 0;
 
 $('td').click( function(){
   if (numTurn % 2 === 0) {
-      $(this).toggleClass('playerone');
+      $(this).removeClass('playertwo').addClass('playerone');
+      $(this).text('X');
       numTurn += 1;
+      console.log(currentBoard);
     } else if (numTurn % 2 !== 0){
-      $(this).toggleClass('playertwo');
+      $(this).removeClass('playerone').addClass('playertwo');
+      $(this).text('O');
       numTurn += 1;
+      console.log(currentBoard);
     }
   });
 

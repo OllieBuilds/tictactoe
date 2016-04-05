@@ -7,7 +7,6 @@
 require('./example.js');
 require('./gameplay.js');
 
-
 const authEvents = require('./auth/events.js');
 
 

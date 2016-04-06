@@ -31,6 +31,7 @@ const signOut = (success, failure) => {
     url: app.api + 'sign-out/' + app.user.id,
     headers: {
       Authorization: "Token token=" + app.user.token,
+      // Authorization: "Token token=" + app.user2.token,
     },
   }).done(success)
   .fail(failure);

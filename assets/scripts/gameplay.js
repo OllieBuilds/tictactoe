@@ -1,15 +1,17 @@
 'use strict';
 
 
-const app = require('./app-data');
+const app = require('./auth/events');
+// const playerOne = require('./auth/events');
+// const playerTwo = require('./auth/events');
 
-console.log(app.user);
 
 let gameArray = [
   "", "", "","","","","","","",
 ];
 
 let numTurn = 0;
+
 
 const announceWinner = function(a) {
   console.log('Player ' + a + ' wins!');
@@ -64,14 +66,14 @@ if (array[0] !== ""){
 };
 
 $('td').click( function () {
-  if(app.user !== undefined){
           if (numTurn % 2 === 0 && $(this).text() === '') {
               $(this).removeClass('playertwo').addClass('playerone');
               $(this).text('X');
               gameArray[$(this).attr('id')] = 'X';
               numTurn += 1;
               console.log(gameArray);
-              for(let i = 0; i < gameArray.length; i++) {
+              // winner = playerOne;
+              for(let i = 0; i < 100; i++) {
                 winCases(gameArray);
               }
               // console.log ($(this).get());
@@ -81,11 +83,12 @@ $('td').click( function () {
               gameArray[$(this).attr('id')] = 'O';
               numTurn += 1;
               console.log(gameArray);
-              for(let i = 0; i < gameArray.length; i++) {
+              // winner = playerTwo;
+              for(let i = 0; i < 100; i++) {
                 winCases(gameArray);
               }
             }
-  } else {console.log('no user present');}
+  // else {console.log('no user present');}
   });
 
 

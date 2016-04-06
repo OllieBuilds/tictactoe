@@ -24,7 +24,7 @@ const checkUser = function checkUser () {
   if (app.user) {
     console.log('logged in');
   } else {
-    console.log('wtf???');
+    console.log('no user');
   }
 };
 

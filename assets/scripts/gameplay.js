@@ -14,12 +14,16 @@ const announceWinner = function(a) {
 };
 
 const winCases = function winCases(array) {
-  if(array[0] !== "" && array.length > 4){
+  if(array[0] !== ""){
     // right column wins
     if(array[3] !== "" && array[3] === array[6]){
       return announceWinner(array[0]);
     }
+    // diagnoal column wins
+ else if (array[4] !== "" && array[4] === array[8]){
+      return announceWinner(array[0]);
   }
+}
 };
 
 

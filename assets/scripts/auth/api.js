@@ -1,6 +1,7 @@
 'use strict';
 
 const app = require('../app-data');
+const gameplay = require('../gameplay');
 
 const signUp = (success, failure, data) => {
 // Math.random() tests code
@@ -72,7 +73,6 @@ const newGame = (success, failure) => {
   $.ajax({
     method: 'POST',
     url: app.api + 'games',
-    data: app.gameId,
     headers: {
       Authorization: "Token token=" + app.user1.token,
     },
@@ -85,8 +85,20 @@ const updateGame = (success, failure, data) => {
   console.log('update game call');
   $.ajax({
     method: 'PATCH',
-    url: app.api + 'games/' + app.gameId,
-    data,
+    url: app.api + 'games/' + gameplay.gameId,
+    processData: false,
+    data: {
+        "game": {
+          "cell": {
+            "index": ,
+            "value": ,
+          },
+          "over": false
+        }
+      },
+    headers:{
+      Authorization: "Token token=" + app.user1.token,
+    },
   }).done(success)
   .fail(failure);
   console.log('Game updated');

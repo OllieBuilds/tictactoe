@@ -2,15 +2,15 @@
 
 const app = require('../app-data.js');
 const users = require('../users');
+const gameplay = require('../gameplay');
 
-let gameId;
 
 const success = (data) => {
   console.log(data);
   console.log('Password has been changed');
 };
 
-const pwSuccess = (data) => {
+const pwSuccess = () => {
   console.log('Password has been changed');
 };
 
@@ -46,8 +46,8 @@ const checkUser = function checkUser () {
 
 const newGameSuccess = (data) => {
   console.log(data);
-  gameId = data.game.id;
-  console.log(gameId);
+  gameplay.gameId = data.game.id;
+  console.log(gameplay.gameId);
 };
 
 checkUser();
@@ -60,6 +60,5 @@ module.exports = {
   signInSuccessTwo,
   signOutSuccess,
   checkUser,
-  gameId,
   newGameSuccess,
 };

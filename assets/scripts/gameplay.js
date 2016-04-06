@@ -5,6 +5,7 @@ const app = require('./auth/events');
 // const playerOne = require('./auth/events');
 // const playerTwo = require('./auth/events');
 
+let gameId;
 
 let gameArray = [
   null, null, null, null, null, null, null, null, null,
@@ -92,4 +93,6 @@ $('td').click( function () {
 
 
 
-module.exports = true;
+module.exports = {
+  gameId,
+};

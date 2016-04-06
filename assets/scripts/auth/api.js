@@ -23,6 +23,15 @@ const signIn = (success, failure, data) => {
   .fail(failure);
 };
 
+const changePassword = (success, failure, data, user) => {
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + 'change-password/' + user,
+    data,
+  }).done(success)
+  .fail(failure);
+};
+
 const signInTwo = (success, failure, data) => {
   $.ajax({
     method: 'POST',
@@ -75,4 +84,5 @@ module.exports = {
   signInTwo,
   signOut,
   newGame,
+  changePassword,
 };

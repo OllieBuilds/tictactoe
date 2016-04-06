@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('../app-data');
+const app = require('../app-data.js');
 
 const success = (data) => {
   console.log(data);
@@ -12,7 +12,7 @@ const failure = (error) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log('You signed in');
+  console.log(app.user);
 };
 
 const signOutSuccess = () => {
@@ -20,9 +20,20 @@ const signOutSuccess = () => {
   console.log('You successfully logged out.');
 };
 
+const checkUser = function checkUser () {
+  if (app.user) {
+    console.log('logged in');
+  } else {
+    console.log('wtf???');
+  }
+};
+
+checkUser();
+
 module.exports = {
   failure,
   success,
   signInSuccess,
-  signOutSuccess
+  signOutSuccess,
+  checkUser,
 };

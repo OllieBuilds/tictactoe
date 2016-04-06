@@ -1,9 +1,14 @@
 'use strict';
 
 const app = require('../app-data.js');
+const users = require('../users');
+
+let gameId;
 
 const success = (data) => {
   console.log(data);
+  gameId = data.game.id;
+  console.log(gameId);
 };
 
 const failure = (error) => {
@@ -11,8 +16,16 @@ const failure = (error) => {
 };
 
 const signInSuccess = (data) => {
-  app.user = data.user;
-  console.log(app.user);
+    app.user1 = data.user;
+    users.player1.authToken = data.user.token;
+    console.log('user 1' + app.user1);
+  };
+
+
+const signInSuccessTwo = (data) => {
+    app.user2 = data.user;
+    users.player2.authToken = data.user.token;
+    console.log('user 2' + app.user2);
 };
 
 const signOutSuccess = () => {
@@ -34,6 +47,8 @@ module.exports = {
   failure,
   success,
   signInSuccess,
+  signInSuccessTwo,
   signOutSuccess,
   checkUser,
+  gameId,
 };

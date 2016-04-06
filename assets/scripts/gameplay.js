@@ -7,7 +7,7 @@ const app = require('./auth/events');
 
 
 let gameArray = [
-  "", "", "","","","","","","",
+  null, null, null, null, null, null, null, null, null,
 ];
 
 let numTurn = 0;
@@ -19,45 +19,45 @@ const announceWinner = function(a) {
 
 const winCases = function winCases(array) {
   // global --> top row 0
-if (array[0] !== ""){
+if (array[0] !== null){
   // top row: horizontal
-  if(array[1] !== "" && array[1] === array[2]){
+  if(array[1] !== null && array[1] === array[2]){
     return announceWinner(array[0]);
   }
   // top row: vertical
-  else if(array[3] !== "" && array[3] === array[6]){
+  else if(array[3] !== null && array[3] === array[6]){
     return announceWinner(array[0]);
   }
   // top left diagonal
-  else if(array[4] !== "" && array[4] === array[8]){
+  else if(array[4] !== null && array[4] === array[8]){
     return announceWinner(array[0]);
   }
   //global --> 1
-}else if(array[1] !== ""){
+}else if(array[1] !== null){
   // center column vertical
-  if(array[4] !== "" && array[4] === array[7]){
+  if(array[4] !== null && array[4] === array[7]){
     return announceWinner(array[1]);
   }
   // global --> 2
-}else if(array[2] !== ""){
+}else if(array[2] !== null){
   // right column vertical
-  if(array[5] !== "" && array[5] === array[8]){
+  if(array[5] !== null && array[5] === array[8]){
     return announceWinner(array[2]);
   }
   // right corner diagonal
-  if(array[4] !== "" && array[4] === array[6]){
+  if(array[4] !== null && array[4] === array[6]){
     return announceWinner(array[2]);
   }
   // global --> 3
-}else if(array[3] !== ""){
+}else if(array[3] !== null){
   // middle row horizontal
-  if(array[4] !== "" && array[4] === array[5]){
+  if(array[4] !== null && array[4] === array[5]){
     return announceWinner(array[3]);
   }
   // global --> 6
-}else if(array[6] !== ""){
+}else if(array[6] !== null){
   // bottom row horizontal
-  if(array[7] !== "" && array[7] === array[8]){
+  if(array[7] !== null && array[7] === array[8]){
     return announceWinner(array[6]);
   }
   // global
@@ -73,9 +73,7 @@ $('td').click( function () {
               numTurn += 1;
               console.log(gameArray);
               // winner = playerOne;
-              for(let i = 0; i < 100; i++) {
                 winCases(gameArray);
-              }
               // console.log ($(this).get());
             } else if (numTurn % 2 !== 0 && $(this).text() === ''){
               $(this).removeClass('playerone').addClass('playertwo');
@@ -84,9 +82,9 @@ $('td').click( function () {
               numTurn += 1;
               console.log(gameArray);
               // winner = playerTwo;
-              for(let i = 0; i < 100; i++) {
+
                 winCases(gameArray);
-              }
+
             }
   // else {console.log('no user present');}
   });

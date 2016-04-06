@@ -18,6 +18,7 @@ const announceWinner = function(a) {
 };
 
 const winCases = function winCases(array) {
+for(let i = 0; i < gameArray.length; i++){
   // global --> top row 0
 if (array[0] !== null){
   // top row: horizontal
@@ -61,8 +62,8 @@ if (array[0] !== null){
     return announceWinner(array[6]);
   }
   // global
-}
-  // end function
+  }
+ }  // end function
 };
 
 $('td').click( function () {

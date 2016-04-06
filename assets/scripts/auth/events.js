@@ -40,7 +40,7 @@ const addHandlers = () => {
   // Game functions
   $('#new-game').on('submit', function(event){
     event.preventDefault();
-    authApi.newGame(authUi.success, authUi.failure, gameId);
+    authApi.newGame(authUi.newGameSuccess, authUi.failure, gameId);
   });
 
 

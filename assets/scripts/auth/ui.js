@@ -41,6 +41,12 @@ const checkUser = function checkUser () {
   }
 };
 
+const newGameSuccess = (data) => {
+  console.log(data);
+  gameId = data.game.id;
+  console.log(gameId);
+};
+
 checkUser();
 
 module.exports = {
@@ -51,4 +57,5 @@ module.exports = {
   signOutSuccess,
   checkUser,
   gameId,
+  newGameSuccess,
 };

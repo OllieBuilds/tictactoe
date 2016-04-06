@@ -37,16 +37,23 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
+
+  $('#change-password').on('submit', function(event){
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.changePassword(authUi.pwSuccess, authUi.failure, data);
+  });
+
   // Game functions
   $('#new-game').on('submit', function(event){
     event.preventDefault();
     authApi.newGame(authUi.newGameSuccess, authUi.failure, gameId);
   });
 
-  $('#change-password').on('submit', function(event){
+  $('td').on('click', function(event){
     event.preventDefault();
     let data = getFormFields(this);
-    authApi.changePassword(authUi.pwSuccess, authUi.failure, data);
+    authApi.updateGame(authUi.success, authUi.failure, data);
   });
 
 

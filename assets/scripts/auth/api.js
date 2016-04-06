@@ -81,6 +81,17 @@ const newGame = (success, failure) => {
   console.log('no issues on newGame ajax request');
 };
 
+const updateGame = (success, failure, data) => {
+  console.log('update game call');
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + 'games/' + app.gameId,
+    data,
+  }).done(success)
+  .fail(failure);
+  console.log('Game updated');
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -88,4 +99,5 @@ module.exports = {
   signOut,
   newGame,
   changePassword,
+  updateGame,
 };

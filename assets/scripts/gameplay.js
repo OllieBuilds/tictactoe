@@ -9,29 +9,38 @@ let gameArray = [
 
 let numTurn = 0;
 
-
+const announceWinner = function(a) {
+  console.log('Player ' + a + ' wins!');
+};
 
 const winCases = function winCases(array) {
-  for(let i = 0; i < array.length; i++) {
-    if (array[i] === array[i+3] === array[1+6]){
-      console.log('winner!');
+  if(array[0] !== "" && array.length > 4){
+    // right column wins
+    if(array[3] !== "" && array[3] === array[6]){
+      return announceWinner(array[0]);
     }
   }
 };
+
+
+
+
+
+
 
 
 $('td').click( function () {
   if (numTurn % 2 === 0 && $(this).text() === '') {
       $(this).removeClass('playertwo').addClass('playerone');
       $(this).text('X');
-      gameArray[numTurn] = $(this).attr('id');
+      gameArray[$(this).attr('id')] = 'X';
       numTurn += 1;
       console.log(gameArray);
       // console.log ($(this).get());
     } else if (numTurn % 2 !== 0 && $(this).text() === ''){
       $(this).removeClass('playerone').addClass('playertwo');
       $(this).text('O');
-      gameArray[numTurn] = 'O';
+      gameArray[$(this).attr('id')] = 'O';
       numTurn += 1;
       console.log(gameArray);
     }

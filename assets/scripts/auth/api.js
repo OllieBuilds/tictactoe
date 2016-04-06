@@ -37,8 +37,24 @@ const signOut = (success, failure) => {
   .fail(failure);
 };
 
+const newGame = (success, failure, data) => {
+  console.log(app);
+  $.ajax({
+    method: 'POST',
+    url: app.api + 'games',
+    data,
+    headers: {
+      Authorization: "Token token=" + app.user.token,
+      // Authorization: "Token token=" + app.user2.token,
+    },
+  }).done(success)
+  .fail(failure);
+  console.log('no issues on newGame ajax request');
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
+  newGame,
 };

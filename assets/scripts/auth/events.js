@@ -31,6 +31,16 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
+  // Game functions
+  $('#new-game').on('submit', function(event){
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.newGame(authUi.success, authUi.failure, data);    
+  });
+
+
+
+
 };
 
 

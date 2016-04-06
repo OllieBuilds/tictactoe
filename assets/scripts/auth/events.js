@@ -14,8 +14,9 @@ const addHandlers = () => {
     authApi.signUp(authUi.success, authUi.failure, data);
   });
   $('#sign-in').on('submit', function (event){
-    let data = getFormFields(this);
     event.preventDefault();
+    console.log('stop??');
+    let data = getFormFields(this);
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
     console.log(data);
   });
@@ -23,18 +24,6 @@ const addHandlers = () => {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
   });
-  $('td').click( function () {
-    if (numTurn % 2 === 0 && $(this).text() === '') {
-        $(this).removeClass('playertwo').addClass('playerone');
-        $(this).text('X');
-        numTurn += 1;
-        // console.log ($(this).get());
-      } else if (numTurn % 2 !== 0 && $(this).text() === ''){
-        $(this).removeClass('playerone').addClass('playertwo');
-        $(this).text('O');
-        numTurn += 1;
-      }
-    });
 };
 
 

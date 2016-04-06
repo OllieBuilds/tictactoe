@@ -4,7 +4,7 @@
 
 
 let gameArray = [
-  "", "", "","","","","","",""
+  "", "", "","","","","","","",
 ];
 
 let numTurn = 0;
@@ -18,12 +18,24 @@ const winCases = function winCases(array) {
     // right column wins
     if(array[3] !== "" && array[3] === array[6]){
       return announceWinner(array[0]);
-    }
+      }
     // diagnoal column wins
  else if (array[4] !== "" && array[4] === array[8]){
       return announceWinner(array[0]);
+    }
+
+  }else if(array[1] !== ""){
+    if(array[4] !== "" && array[4] === array[7]){
+      return announceWinner(array[1]);
+    }
+
+  }else if(array[2] !== ""){
+    if(array[5] !== "" && array[5] === array[8]){
+      return announceWinner(array[2]);
+    }else if (array[4] !== "" && array[4] === array[6]){
+      return announceWinner(array[2]);
+    }
   }
-}
 };
 
 

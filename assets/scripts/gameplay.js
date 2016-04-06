@@ -1,7 +1,9 @@
 'use strict';
 
 
+const app = require('./app-data');
 
+console.log(app.user);
 
 let gameArray = [
   "", "", "","","","","","","",
@@ -36,13 +38,6 @@ const winCases = function winCases(array) {
       }
     }
 
-  else if(array[3] !== ""){
-    // center horizontal
-    if(array[4] !== "" && array[4] === array[5]){
-      return announceWinner(array[3]);
-    }
-  }
-
   else if(array[2] !== ""){
     // right column wins
     if(array[5] !== "" && array[5] === array[8]){
@@ -52,26 +47,38 @@ const winCases = function winCases(array) {
       return announceWinner(array[2]);
     }
   }
+
+  else if(array[3] !== ""){
+    // center horizontal
+    if(array[4] !== "" && array[4] === array[5]){
+      return announceWinner(array[3]);
+    }
+  }
 };
 
 $('td').click( function () {
-  if (numTurn % 2 === 0 && $(this).text() === '') {
-      $(this).removeClass('playertwo').addClass('playerone');
-      $(this).text('X');
-      gameArray[$(this).attr('id')] = 'X';
-      numTurn += 1;
-      console.log(gameArray);
-      // console.log ($(this).get());
-    } else if (numTurn % 2 !== 0 && $(this).text() === ''){
-      $(this).removeClass('playerone').addClass('playertwo');
-      $(this).text('O');
-      gameArray[$(this).attr('id')] = 'O';
-      numTurn += 1;
-      console.log(gameArray);
-    }
-    for(let i = 0; i < gameArray.length; i++) {
-      winCases(gameArray);
-    }
+  if(app.user !== undefined){
+          if (numTurn % 2 === 0 && $(this).text() === '') {
+              $(this).removeClass('playertwo').addClass('playerone');
+              $(this).text('X');
+              gameArray[$(this).attr('id')] = 'X';
+              numTurn += 1;
+              console.log(gameArray);
+              for(let i = 0; i < gameArray.length; i++) {
+                winCases(gameArray);
+              }
+              // console.log ($(this).get());
+            } else if (numTurn % 2 !== 0 && $(this).text() === ''){
+              $(this).removeClass('playerone').addClass('playertwo');
+              $(this).text('O');
+              gameArray[$(this).attr('id')] = 'O';
+              numTurn += 1;
+              console.log(gameArray);
+              for(let i = 0; i < gameArray.length; i++) {
+                winCases(gameArray);
+              }
+            }
+  } else {console.log('no user present');}
   });
 
 

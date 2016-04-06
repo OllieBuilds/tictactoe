@@ -4,8 +4,10 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const authApi = require('./api');
 const authUi = require('./ui');
+const app = require('./app-data');
 
-let numTurn = 1;
+let playerOne;
+let playerTwo;
 
 const addHandlers = () => {
   $('#sign-up').on('submit', function (event) {
@@ -15,10 +17,18 @@ const addHandlers = () => {
   });
   $('#sign-in').on('submit', function (event){
     event.preventDefault();
-    console.log('stop??');
+  // two users
+  if(app.user === undefined){
     let data = getFormFields(this);
     authApi.signIn(authUi.signInSuccess, authUi.failure, data);
+    playerOne = app.user;
     console.log(data);
+  }else if(app.user !== undefined){
+    let data = getFormFields(this);
+    authApi.signIn(authUi.signInSuccess, authUi.failure, data);
+    playerTwo = app.user;
+    console.log(data);
+  }
   });
   $('#sign-out').on('click', function(event) {
     event.preventDefault();

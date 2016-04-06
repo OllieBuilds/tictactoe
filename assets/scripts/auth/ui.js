@@ -7,8 +7,11 @@ let gameId;
 
 const success = (data) => {
   console.log(data);
-  gameId = data.game.id;
-  console.log(gameId);
+  console.log('Password has been changed');
+};
+
+const pwSuccess = (data) => {
+  console.log('Password has been changed');
 };
 
 const failure = (error) => {
@@ -52,6 +55,7 @@ checkUser();
 module.exports = {
   failure,
   success,
+  pwSuccess,
   signInSuccess,
   signInSuccessTwo,
   signOutSuccess,

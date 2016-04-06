@@ -43,6 +43,11 @@ const addHandlers = () => {
     authApi.newGame(authUi.newGameSuccess, authUi.failure, gameId);
   });
 
+  $('#change-password').on('submit', function(event){
+    event.preventDefault();
+    let data = getFormFields(this);
+    authApi.changePassword(authUi.pwSuccess, authUi.failure, data);
+  });
 
 
 

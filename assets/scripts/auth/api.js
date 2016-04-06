@@ -23,11 +23,14 @@ const signIn = (success, failure, data) => {
   .fail(failure);
 };
 
-const changePassword = (success, failure, data, user) => {
+const changePassword = (success, failure, data) => {
   $.ajax({
     method: 'PATCH',
-    url: app.api + 'change-password/' + user,
+    url: app.api + 'change-password/' + app.user1.id,
     data,
+    headers: {
+      Authorization: 'Token token=' + app.user1.token,
+    },
   }).done(success)
   .fail(failure);
 };

@@ -12,7 +12,7 @@ const addHandlers = () => {
   $('#sign-up').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
-    authApi.signUp(authUi.success, authUi.failure, data);
+    authApi.signUp(authUi.signInSuccess, authUi.failure, data);
   });
   $('#sign-in').on('submit', function (event){
     event.preventDefault();

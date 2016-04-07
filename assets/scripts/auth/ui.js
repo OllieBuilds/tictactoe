@@ -18,10 +18,13 @@ const failure = (error) => {
   console.error(error);
 };
 
+
 const signInSuccess = (data) => {
     app.user1 = data.user;
     users.player1.authToken = data.user.token;
     console.log('user 1' + app.user1);
+    $('.register').addClass('hidden');
+    $('#new-game').removeClass('hidden');
   };
 
 

@@ -1,13 +1,36 @@
-.playerone{
-  background-color: green;
-  // X
+.playerone {
+  background-color: $green;
 }
 
-.playertwo{
-  background-color: red;
-  // O
+.playertwo {
+  background-color: $red;
 }
 
 .hidden {
+  opacity: 0;
   visibility: none;
+}
+
+.show{
+  opacity: 1;
+  visibility: visible;
+}
+
+.sign-form{
+  height: 75%;
+  width: 200px;
+  overflow: scroll;
+}
+
+.register {
+display: inline;
+  form{
+    background-color: $red;
+    display: inline;
+
+    input{
+      display: inline;
+      color: $green;
+    }
+  }
 }

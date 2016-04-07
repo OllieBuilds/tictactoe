@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Tokemon</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
       <div class="nav">
-        <form id="sign-up">
+      <div class="register sign-form">
+        <form id="sign-up" class="sign-form">
+          <legend>New User Sign up</legend>
           <input name="credentials[email]" type="text" placeholder="an@example.email">
           <input name="credentials[password]" type="password" placeholder="an example password">
           <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
-          <input type="submit" name="submit" value="Sign up">
+          <input type="submit" name="submit" value="Register">
         </form>
+        <!--Sign in -->
+        <form id="sign-in" class="sign-form">
+              <legend>Player One Sign in</legend>
+                <input type="text" name="credentials[email]" value="" placeholder="email">
+                <input type="password" name="credentials[password]" value="" placeholder="password">
+                <input type="submit" name="submit" value="Sign in">
+        </form>
+      </div>
 <!-- Game forms! -->
-        <form id="new-game">
+        <form id="new-game" class="sign-button hidden">
           <input type="submit" name="submit" value="New Game">
         </form>
 
-        <form id="join-game">
+        <form id="join-game" class="sign-button hidden">
           <input type="submit" name="submit" value="Join">
         </form>
 
-<!--Sign in -->
-        <form id="sign-in">
-              <legend>Sign in</legend>
-                <input type="text" name="credentials[email]" value="" placeholder="email">
-                <input type="password" name="credentials[password]" value="" placeholder="password">
-                <input type="submit" name="submit" value="Sign in!">
-        </form>
 
-        <form id="change-password">
+        <form id="change-password" class="sign-form hidden">
           <input type="text" name="passwords[old]" value "" placeholder="change password">
           <input type="text" name="passwords[new]" value "" placeholder="change password">
           <input type="submit" name="submit" value="Submit new password">
         </form>
-
-
-
-
-
-        <input type="submit" id="sign-out" name="submit" value="Sign out">
+        <!-- sign out -->
+        <form class="sign-form hidden">
+          <input type="submit" id="sign-out" name="submit" value="Sign out">
+        </form>
+        <!---GameBoard -->
       </div>
       <div class="container">
         <table id="game-board">

@@ -51,6 +51,8 @@ const newGameSuccess = (data) => {
   console.log(data);
   gameplay.gameId = data.game.id;
   console.log(gameplay.gameId);
+  $('#new-game').addClass('hidden');
+  $('#sign-in-two').removeClass('hidden');
 };
 
 

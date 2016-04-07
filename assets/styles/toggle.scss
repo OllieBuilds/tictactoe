@@ -11,26 +11,35 @@
   visibility: none;
 }
 
-.show{
+.show {
   opacity: 1;
   visibility: visible;
 }
 
-.sign-form{
+.sign-form {
   height: 75%;
-  width: 200px;
   overflow: scroll;
+  width: 200px;
 }
 
 .register {
-display: inline;
-  form{
+  display: inline;
+  z-index: 1;
+  form {
     background-color: $red;
     display: inline;
 
-    input{
-      display: inline;
+    input {
       color: $green;
+      display: inline;
     }
   }
+}
+
+#new-game {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  display: block;
+  margin: 100px auto;
 }

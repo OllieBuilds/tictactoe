@@ -2,6 +2,7 @@
 
 
 const app = require('./auth/events');
+const api = require('./auth/api');
 // const playerOne = require('./auth/events');
 // const playerTwo = require('./auth/events');
 
@@ -73,19 +74,20 @@ $('td').click( function () {
               $(this).text('X');
               gameArray[$(this).attr('id')] = 'X';
               numTurn += 1;
+              winCases(gameArray);
               console.log(gameArray);
               // winner = playerOne;
-                winCases(gameArray);
+              api.updateGame();
+
               // console.log ($(this).get());
             } else if (numTurn % 2 !== 0 && $(this).text() === ''){
               $(this).removeClass('playerone').addClass('playertwo');
               $(this).text('O');
               gameArray[$(this).attr('id')] = 'O';
               numTurn += 1;
+              winCases(gameArray);
               console.log(gameArray);
               // winner = playerTwo;
-
-                winCases(gameArray);
 
             }
   // else {console.log('no user present');}

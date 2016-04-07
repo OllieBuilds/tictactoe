@@ -85,17 +85,9 @@ const updateGame = (success, failure, data) => {
   console.log('update game call');
   $.ajax({
     method: 'PATCH',
-    url: app.api + 'games/' + gameplay.gameId,
+    url: app.api + 'games/' + gameplay.cells,
     processData: false,
-    data: {
-        "game": {
-          "cell": {
-            "index": ,
-            "value": ,
-          },
-          "over": false
-        }
-      },
+    data,
     headers:{
       Authorization: "Token token=" + app.user1.token,
     },

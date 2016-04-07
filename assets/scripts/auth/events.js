@@ -4,7 +4,6 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const authApi = require('./api');
 const authUi = require('./ui');
-let gameArray = require('../gameplay');
 //
 // let playerOne;
 // let playerTwo;
@@ -47,7 +46,7 @@ const addHandlers = () => {
 
   $('#join-game').on('submit', function(event){
     event.preventDefault();
-    authApi.updateGame(authUi.success, authUi.failure);
+    authApi.joinGame(authUi.success, authUi.failure);
   });
 
   $('#change-password').on('submit', function(event){
@@ -56,8 +55,6 @@ const addHandlers = () => {
     let data = getFormFields(this);
     authApi.changePassword(authUi.pwSuccess, authUi.failure, data);
   });
-
-
 
 };
 

@@ -3,6 +3,7 @@
 
 const app = require('./auth/events');
 const api = require('./auth/api');
+const ui = require('./auth/ui');
 // const playerOne = require('./auth/events');
 // const playerTwo = require('./auth/events');
 
@@ -74,10 +75,12 @@ $('td').click( function () {
               $(this).text('X');
               gameArray[$(this).attr('id')] = 'X';
               numTurn += 1;
+              api.updateGame(
+                    console.log('updated'), console.log('failed'), gameArray[$(this).attr('id')], 'X'
+                  );
               winCases(gameArray);
               console.log(gameArray);
               // winner = playerOne;
-              api.updateGame();
 
               // console.log ($(this).get());
             } else if (numTurn % 2 !== 0 && $(this).text() === ''){
@@ -85,10 +88,12 @@ $('td').click( function () {
               $(this).text('O');
               gameArray[$(this).attr('id')] = 'O';
               numTurn += 1;
+              // winner = playerTwo;
+              api.updateGame(
+                    ui.success, ui.failure, gameArray[$(this).attr('id')], 'O'
+                  );
               winCases(gameArray);
               console.log(gameArray);
-              // winner = playerTwo;
-
             }
   // else {console.log('no user present');}
   });

@@ -81,27 +81,40 @@ const newGame = (success, failure) => {
   console.log('no issues on newGame ajax request');
 };
 
-const updateGame = (success, failure, data) => {
+const joinGame = (success, failure, data) => {
   console.log('update game call');
   console.log(data);
   $.ajax({
     method: 'PATCH',
     url: app.api + 'games/' + gameplay.gameId,
-    // processData: false,
-    // data:"",
-    // //   "game":{
-    // //     "player_o": {
-    // //       "id": app.user1.id,
-    // //       "email": app.user1.email
-    // //     }
-    // //   }
-    // // },
     headers:{
       Authorization: "Token token=" + app.user2.token,
     },
   }).done(success)
   .fail(failure);
   console.log('Game updated');
+};
+
+const updateGame = (success, failure, ugIndex, ugValue) => {
+  console.log('updateGame called');
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + 'games/' + gameplay.gameId,
+    headers:{
+      Authorization: "Token token=" + app.user1.token,
+    },
+    data: {
+        "game": {
+          "cell": {
+            "index": ugIndex,
+            "value": ugValue,
+          },
+          "over": false
+        },
+    }
+  }).done(success)
+  .fail(failure);
+  console.log(gameplay.cells);
 };
 
 module.exports = {
@@ -112,4 +125,5 @@ module.exports = {
   newGame,
   changePassword,
   updateGame,
+  joinGame,
 };

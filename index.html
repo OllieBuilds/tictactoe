@@ -23,6 +23,11 @@
                 <input type="password" name="credentials[password]" value="" placeholder="password">
                 <input type="submit" name="submit" value="Sign in">
         </form>
+        <form id="change-password" class="sign-form">
+          <input type="text" name="passwords[old]" value "" placeholder="change password">
+          <input type="text" name="passwords[new]" value "" placeholder="change password">
+          <input type="submit" name="submit" value="Submit new password">
+        </form>
       </div>
 <!-- Game forms! -->
         <form id="new-game" class="sign-button hidden">
@@ -30,15 +35,9 @@
         </form>
 
         <form id="join-game" class="sign-button hidden">
-          <input type="submit" name="submit" value="Join">
+          <input type="submit" name="submit" value="Player 2 Join">
         </form>
 
-
-        <form id="change-password" class="sign-form hidden">
-          <input type="text" name="passwords[old]" value "" placeholder="change password">
-          <input type="text" name="passwords[new]" value "" placeholder="change password">
-          <input type="submit" name="submit" value="Submit new password">
-        </form>
         <!-- sign out -->
         <form class="sign-form hidden">
           <input type="submit" id="sign-out" name="submit" value="Sign out">

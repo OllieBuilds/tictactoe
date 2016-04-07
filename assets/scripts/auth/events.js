@@ -46,7 +46,7 @@ const addHandlers = () => {
 
   $('#join-game').on('submit', function(event){
     event.preventDefault();
-    authApi.joinGame(authUi.success, authUi.failure);
+    authApi.joinGame(authUi.JoinSuccess, authUi.failure);
   });
 
   $('#change-password').on('submit', function(event){

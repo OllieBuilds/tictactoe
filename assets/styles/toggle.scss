@@ -24,7 +24,7 @@
 
 .register {
   display: inline;
-  z-index: 1;
+  z-index: -1;
   form {
     background-color: $red;
     display: inline;

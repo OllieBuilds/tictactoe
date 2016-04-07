@@ -10,6 +10,13 @@ const success = (data) => {
   console.log('success');
 };
 
+const JoinSuccess = (data) => {
+  console.log(data);
+  console.log('success');
+  $('#join-game').addClass('hidden');
+  $('#new-game').removeClass('hidden');
+};
+
 const pwSuccess = () => {
   console.log('Password has been changed');
 };
@@ -32,6 +39,8 @@ const signInSuccessTwo = (data) => {
     app.user2 = data.user;
     users.player2.authToken = data.user.token;
     console.log( app.user2);
+    $('#sign-in-two').addClass('hidden');
+    $('#join-game').removeClass('hidden');
 };
 
 const signOutSuccess = () => {
@@ -68,4 +77,5 @@ module.exports = {
   signOutSuccess,
   checkUser,
   newGameSuccess,
+  JoinSuccess,
 };

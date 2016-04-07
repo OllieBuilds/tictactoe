@@ -87,15 +87,7 @@ const updateGame = (success, failure, data) => {
     method: 'PATCH',
     url: app.api + 'games/' + gameplay.gameId,
     processData: false,
-    data: {
-        "game": {
-          "cell": {
-            "index": ,
-            "value": ,
-          },
-          "over": false
-        }
-      },
+    data,
     headers:{
       Authorization: "Token token=" + app.user1.token,
     },

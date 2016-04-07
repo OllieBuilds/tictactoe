@@ -4,7 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const authApi = require('./api');
 const authUi = require('./ui');
-let gameArray = require('../gameplay');
+const gameplay = require('../gameplay');
 //
 // let playerOne;
 // let playerTwo;
@@ -50,16 +50,18 @@ const addHandlers = () => {
     authApi.newGame(authUi.newGameSuccess, authUi.failure);
   });
 
-  $('td').on('click', function(event){
-    event.preventDefault();
-    authApi.updateGame(authUi.success, authUi.failure);
-  });
+
 
 
 
 };
 
+const linkFunc = function(){
+  // 'click'.preventDefault();
+  authApi.updateGame(authUi.success, authUi.failure, gameplay.indexForAjax);
+};
 
 module.exports = {
   addHandlers,
+  linkFunc,
 };

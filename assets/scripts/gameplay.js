@@ -1,6 +1,6 @@
 'use strict';
 
-
+const events = require('./auth/events');
 const app = require('./auth/events');
 // const playerOne = require('./auth/events');
 // const playerTwo = require('./auth/events');
@@ -12,7 +12,8 @@ let gameArray = [
 ];
 
 let numTurn = 0;
-
+let indexForAjax;
+let valueForAjax;
 
 const announceWinner = function(a) {
   console.log('Player ' + a + ' wins!');
@@ -70,8 +71,13 @@ if (array[0] !== null){
 $('td').click( function () {
           if (numTurn % 2 === 0 && $(this).text() === '') {
               $(this).removeClass('playertwo').addClass('playerone');
+              console.log('PENIS');
               $(this).text('X');
-              gameArray[$(this).attr('id')] = 'X';
+              indexForAjax = $(this).attr('id');
+              console.log(indexForAjax);
+                // debugger;
+              // indexForAjax = $(this).attr('id');
+              valueForAjax ="X";
               numTurn += 1;
               console.log(gameArray);
               // winner = playerOne;
@@ -81,6 +87,8 @@ $('td').click( function () {
               $(this).removeClass('playerone').addClass('playertwo');
               $(this).text('O');
               gameArray[$(this).attr('id')] = 'O';
+              indexForAjax = gameArray;
+              valueForAjax = gameArray;
               numTurn += 1;
               console.log(gameArray);
               // winner = playerTwo;
@@ -89,10 +97,13 @@ $('td').click( function () {
 
             }
   // else {console.log('no user present');}
+  events.linkFunc();
   });
 
 
 
 module.exports = {
   gameId,
+  indexForAjax,
+  valueForAjax,
 };

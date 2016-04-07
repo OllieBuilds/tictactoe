@@ -120,13 +120,7 @@ const updateGame = (success, failure, ugIndex, ugValue) => {
 const getId = (success, failure) => {
   $.ajax({
     method: 'GET',
-    url:  app.api + 'games/' +  + gameplay.gameId,
-    data: {"game": {
-      "cell": {
-
-      },
-    }
-  },
+    url:  app.api + 'games/' +  gameplay.gameId,
     headers: {
       Authorization: "Token token=" + app.user1.token,
     },

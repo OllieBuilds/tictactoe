@@ -1,8 +1,7 @@
 
-
 .container {
   // background-color: $base;
-  background: 'tileable_wood_texture.png';
+  z-index: 1;
 
 }
 
@@ -16,10 +15,11 @@ table {
   }
 }
 
-.nav{
+.nav {
+  background-color: $grey;
+  // background-image: url('../styles/img/trippy.jpg');
+  background-repeat: no-repeat;
   border: 1px solid $blue;
   padding: 2em;
-  background-color: $grey;
-  background-repeat: no-repeat;
   width: 100%;
 }

@@ -30,6 +30,8 @@ const addHandlers = () => {
     let data = getFormFields(this);
     // playerOne = app.user;
     authApi.signInTwo(authUi.signInSuccessTwo, authUi.failure, data);
+// update game with player O data
+    // authApi.updateGame(authUi.success, authUi.failure, data);
     console.log(data);
   });
 
@@ -41,6 +43,11 @@ const addHandlers = () => {
   $('#new-game').on('submit', function(event){
     event.preventDefault();
     authApi.newGame(authUi.newGameSuccess, authUi.failure);
+  });
+
+  $('#join-game').on('submit', function(event){
+    event.preventDefault();
+    authApi.updateGame(authUi.success, authUi.failure);
   });
 
   $('#change-password').on('submit', function(event){

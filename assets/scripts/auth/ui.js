@@ -7,7 +7,7 @@ const gameplay = require('../gameplay');
 
 const success = (data) => {
   console.log(data);
-  console.log('Password has been changed');
+  console.log('success');
 };
 
 const pwSuccess = () => {
@@ -28,7 +28,7 @@ const signInSuccess = (data) => {
 const signInSuccessTwo = (data) => {
     app.user2 = data.user;
     users.player2.authToken = data.user.token;
-    console.log('user 2' + app.user2);
+    console.log( app.user2);
 };
 
 const signOutSuccess = () => {

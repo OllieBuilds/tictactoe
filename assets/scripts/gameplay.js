@@ -13,11 +13,16 @@ let gameArray = [
   null, null, null, null, null, null, null, null, null,
 ];
 
+let newGameArray = [
+  null, null, null, null, null, null, null, null, null,
+];
+
 let numTurn = 0;
 
 
 const announceWinner = function(a) {
   console.log('Player ' + a + ' wins!');
+  $('#winnerPop').text('Player ' + a + ' wins!').removeClass('hidden');
 };
 
 const winCases = function winCases(array) {
@@ -69,7 +74,7 @@ if (array[0] !== null){
  }  // end function
 };
 
-$('td').click( function () {
+$('td').on('click', function () {
           if (numTurn % 2 === 0 && $(this).text() === '') {
               $(this).removeClass('playertwo').addClass('playerone');
               $(this).text('X');
@@ -98,8 +103,14 @@ $('td').click( function () {
   // else {console.log('no user present');}
   });
 
+  $('#jscolor').on('click', function(){
+    $('$base').css($(this).value());
+  });
+
 
 
 module.exports = {
   gameId,
+  gameArray,
+  newGameArray
 };

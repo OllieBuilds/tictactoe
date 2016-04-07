@@ -62,6 +62,12 @@ const newGameSuccess = (data) => {
   console.log(gameplay.gameId);
   $('#new-game').addClass('hidden');
   $('#sign-in-two').removeClass('hidden');
+  gameplay.gameArray = gameplay.newGameArray;
+};
+
+const getSuccess = (data) => {
+  console.log('get succ');
+  console.log(data);
 };
 
 
@@ -78,4 +84,5 @@ module.exports = {
   checkUser,
   newGameSuccess,
   JoinSuccess,
+  getSuccess,
 };

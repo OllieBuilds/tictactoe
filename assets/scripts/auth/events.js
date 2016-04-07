@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 
 const authApi = require('./api');
 const authUi = require('./ui');
+const gameplay = require('../gameplay');
 //
 // let playerOne;
 // let playerTwo;
@@ -42,6 +43,11 @@ const addHandlers = () => {
   $('#new-game').on('submit', function(event){
     event.preventDefault();
     authApi.newGame(authUi.newGameSuccess, authUi.failure);
+    $('#winnerPop').addClass('hidden');
+    $('td').removeClass('playerone').removeClass('playertwo').text(null);
+    for(let i = 0; i <= gameplay.gameArray.length; i++) {
+      gameplay.gameArray[i] = null;
+    }
   });
 
   $('#join-game').on('submit', function(event){
@@ -54,6 +60,12 @@ const addHandlers = () => {
     authApi.updateGame(authUi.success, authUi.failure);
     let data = getFormFields(this);
     authApi.changePassword(authUi.pwSuccess, authUi.failure, data);
+  });
+
+  $('#getId').on('submit', function(event){
+    console.log('getId');
+    event.preventDefault();
+    authApi.getId(authUi.getSuccess, authUi.failure);
   });
 
 };

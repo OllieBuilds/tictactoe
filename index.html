@@ -5,12 +5,14 @@
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
     <body class="container-fluid">
+
       <div class="nav">
       <div class="register sign-form">
         <form id="sign-up" class="sign-form">
-          <legend>New User Sign up</legend>
+          <legend>Sign up</legend>
           <input name="credentials[email]" type="text" placeholder="an@example.email">
           <input name="credentials[password]" type="password" placeholder="an example password">
           <input name="credentials[password_confirmation]" type="password" placeholder="an example password">
@@ -18,7 +20,7 @@
         </form>
         <!--Sign in -->
         <form id="sign-in" class="sign-form">
-              <legend>Player One Sign in</legend>
+              <legend>Sign in</legend>
                 <input type="text" name="credentials[email]" value="" placeholder="email">
                 <input type="password" name="credentials[password]" value="" placeholder="password">
                 <input type="submit" name="submit" value="Sign in">
@@ -38,13 +40,25 @@
           <input type="submit" name="submit" value="Player 2 Join">
         </form>
 
+        <form id="sign-in-two" class="hidden">
+              <legend>Challenger</legend>
+                <input type="text" name="credentials[email]" value="" placeholder="email">
+                <input type="password" name="credentials[password]" value="" placeholder="password">
+                <input type="submit" name="submit" value="Sign in!">
+        </form>
+
         <!-- sign out -->
         <form class="sign-form hidden">
           <input type="submit" id="sign-out" name="submit" value="Sign out">
         </form>
+        <div class="winner">
+          <h1 id="winnerPop" class="hidden"></h1>
+        </div>
+
         <!---GameBoard -->
       </div>
       <div class="container">
+
         <table id="game-board">
           <tr>
             <td id='0'></td>
@@ -64,11 +78,10 @@
         </table>
       </div>
 
-      <form id="sign-in-two" class="hidden">
-            <legend>Sign in player 2</legend>
-              <input type="text" name="credentials[email]" value="" placeholder="email">
-              <input type="password" name="credentials[password]" value="" placeholder="password">
-              <input type="submit" name="submit" value="Sign in!">
+      <form class="sign-form">
+        <input type="submit" id="getId" name="submit" value="Current Game">
       </form>
+
+
     </body>
 </html>

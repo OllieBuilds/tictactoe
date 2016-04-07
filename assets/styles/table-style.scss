@@ -1,15 +1,25 @@
 
 
 .container {
-  background-color: $base;
+  // background-color: $base;
+  background: 'tileable_wood_texture.png';
+
 }
 
 table {
-  background-color: $white;
+  background-color: $grey;
 
   td {
-    border: 2px solid $base;
+    border: 2px solid $blue;
     height: 50px;
     width: 50px;
   }
+}
+
+.nav{
+  border: 1px solid $blue;
+  padding: 2em;
+  background-color: $grey;
+  background-repeat: no-repeat;
+  width: 100%;
 }

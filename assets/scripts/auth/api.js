@@ -117,6 +117,24 @@ const updateGame = (success, failure, ugIndex, ugValue) => {
   console.log(gameplay.cells);
 };
 
+const getId = (success, failure) => {
+  $.ajax({
+    method: 'GET',
+    url:  app.api + 'games/' +  + gameplay.gameId,
+    data: {"game": {
+      "cell": {
+
+      },
+    }
+  },
+    headers: {
+      Authorization: "Token token=" + app.user1.token,
+    },
+  }).done(success)
+  .fail(failure);
+  console.log(gameplay.gameId);
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -126,4 +144,5 @@ module.exports = {
   changePassword,
   updateGame,
   joinGame,
+  getId,
 };

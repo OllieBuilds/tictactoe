@@ -2,5 +2,24 @@
 
 .container {
   position: fixed;
-  top: 200px;
+  top: 250px;
+  width: 96%;
+  margin: 0 auto;
+}
+
+#game-board {
+  margin: 10px auto;
+  tr {
+    width: 80%;
+    margin: 0 auto;
+
+    td {
+      width: 100px;
+      height: 100px;
+
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
 }

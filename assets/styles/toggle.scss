@@ -1,9 +1,19 @@
 .playerone {
   background-color: $green;
+  color: $green;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .playertwo {
   background-color: $red;
+  color: $red;
+
+  &:hover {
+    color: $blue;
+  }
 }
 
 .hidden {
@@ -25,12 +35,13 @@
 .register {
   display: inline;
   z-index: -1;
+  background-color: $grey;
   form {
     background-color: $red;
     display: inline;
 
     input {
-      color: $green;
+      color: $blue;
       display: inline;
     }
   }
